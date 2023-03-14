@@ -1,1 +1,1 @@
-alert(/just xss test /)
+alert(document.cookie)

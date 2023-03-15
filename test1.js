@@ -1,0 +1,1 @@
+alert(/just xss test/)

